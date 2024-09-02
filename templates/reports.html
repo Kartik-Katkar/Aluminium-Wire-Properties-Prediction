@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/report.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>WireCraft</title>
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="navbar">
+        <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
+        <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Home" class="navbar-logo-1"></a>
+        <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="FAQ" class="navbar-logo"></a>
+    </div>
+    <hr>
+    
+    <div class="content">
+        <div class="back-button">
+            <a href="{{ url_for('home') }}"><img src="../static/images/back-arrow.png" alt="Back"></a>
+        </div>
+        <h2 class="title">Detailed report</h2>
+
+        <div class="report-info">
+            <p>Odd values detected : 8</p>
+            <p>Borderline values : 4</p>
+            <p>Handled values : 4</p>
+            <p>Status : <span class="status"></span></p>
+        </div>
+
+        <div class="comment-section">
+            <p>Comment: Based on the values the Industry is following the compliant values set by ministry of Labor and employment.</p>
+            <p>Maintenance Quality check need for sensor 43AD.</p>
+        </div>
+
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Data 1</th>
+                    <th>Value</th>
+                    <th>Industry value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>32443432234</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>423324refr</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="/download_report" class="download-button">Download Industry Compliance report</a>
+    </div>
+</body>
+</html>

@@ -40,6 +40,13 @@ html {
   margin-bottom: 1rem;
   margin-right: 10rem; /* Space between logo and text */
 }
+.navbar-logo-1 {
+  height: 50px; /* Adjust size as needed */
+  margin-left: 40rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem; /* Space between logo and text */
+}
 
 .content {
   flex: 1;
