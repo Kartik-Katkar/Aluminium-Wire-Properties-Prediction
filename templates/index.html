@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>WireCraft</title>
+    
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">My Logo</div>
+        
+    </div>
+
+    <div class="content">
+        <div class="text-section">
+            <h1>Aluminum Prediction</h1>
+            <p>We provide the best solutions for your business. Discover our services and make your business grow with us.</p>
+            <button class="button">Learn More</button>
+        </div>
+        <div class="canvas-container">
+            <div id="container"></div>
+            <!-- Measurement with arrows -->
+            <div class="measurement" style="top: 50%; left: 10%; transform: translateY(-50%);">
+                <div class="arrow arrow-right"></div>
+                9.5mm
+                <div class="arrow arrow-left"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Setup
+        const container = document.getElementById('container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        // Create the mesh cylinder
+        const geometry = new THREE.CylinderGeometry(2, 2, 10, 18, 32, false); // Increased size
+        const material = new THREE.MeshBasicMaterial({ color: 0xbbbbbb, wireframe: true });
+        const cylinder = new THREE.Mesh(geometry, material);
+        
+        // Tilt the cylinder
+        cylinder.rotation.x = Math.PI / 4; // Tilt on x-axis
+        cylinder.rotation.z = Math.PI / 6; // Tilt on z-axis
+        
+        cylinder.position.x = 3;
+
+        scene.add(cylinder);
+
+        // Position the camera
+        camera.position.z = 15; // Adjusted for larger object
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate the cylinder in a southwest direction
+            cylinder.rotation.x += 0.005; // Slight rotation on the x-axis
+            cylinder.rotation.y += 0.01;  // Slight rotation on the y-axis
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+</body>
+</html>
