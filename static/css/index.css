@@ -4,10 +4,12 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  
+  
 }
 
 .navbar {
@@ -34,8 +36,8 @@ html {
 .navbar-logo {
   height: 50px; /* Adjust size as needed */
   margin-left: 5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   margin-right: 10rem; /* Space between logo and text */
 }
 
