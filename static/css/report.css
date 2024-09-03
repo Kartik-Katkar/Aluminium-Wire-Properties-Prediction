@@ -1,7 +1,9 @@
-/* Content Styles */
-*{
+/* General Styles */
+* {
   font-family: 'Montserrat', Arial, sans-serif;
 }
+
+/* Content Container */
 .content {
   display: flex;
   flex-direction: column;
@@ -12,8 +14,7 @@
   background-color: #ffffff;
   text-align: center;
   width: 100%;
-  max-width: 1200px; /* Limit the width for better readability */
-  
+  max-width: 1000px; /* Limit the width for better readability */
   margin: 0 auto;
 }
 
@@ -22,6 +23,21 @@
   font-weight: 600;
   margin-bottom: 20px;
   font-size: 2rem;
+}
+
+/* Report Container (Text + Image) */
+.report-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Report Text Container */
+.report-text {
+  flex: 1;
+  margin-right: 20px;
 }
 
 /* Report Information Styles */
@@ -52,6 +68,19 @@
   font-size: 16px;
   color: #333;
   width: 100%; /* Full width */
+}
+
+/* Report Image */
+.report-image {
+  flex: 0 0 200px; /* Adjust based on image size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-image img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Table Styles */
@@ -96,6 +125,14 @@
 
   .title {
     font-size: 1.5rem;
+  }
+
+  .report-container {
+    flex-direction: column;
+  }
+
+  .report-text, .report-image {
+    margin: 0 0 20px 0;
   }
 
   .report-info, .comment-section {
