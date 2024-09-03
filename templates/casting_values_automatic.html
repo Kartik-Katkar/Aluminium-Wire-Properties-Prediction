@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../static/css/index.css"> -->
+    <link rel="stylesheet" href="../static/css/casting_values.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>WireCraft - Casting Values</title>
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="navbar">
+        <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
+        <div class="nav-links">
+            <!-- <a href="index.html">Home</a> -->
+            <!-- <a href="faq.html">FAQ</a> -->
+            <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="Logo" class="navbar-logo"></a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Casting values automatic</h1>
+        
+        <div class="values-container">
+            <div class="left-column">
+                <h2>Desired Values</h2>
+                <div class="value-item">
+                    <label>UTS (MPa) desired value:</label>
+                    <span id="uts-desired" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Elongation (%) desired value:</label>
+                    <span id="elongation-desired" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Conductivity (IACS %) desired value:</label>
+                    <span id="conductivity-desired" class="value">50</span>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <h2>Current Values</h2>
+                <div class="value-item">
+                    <label>UTS (MPa) current value:</label>
+                    <span id="uts-current" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Elongation (%) current value:</label>
+                    <span id="elongation-current" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Conductivity (IACS %) current value:</label>
+                    <span id="conductivity-current" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Chemical_Composition_Al (%):</label>
+                    <span id="chemical-al" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Chemical_Composition_Si (%):</label>
+                    <span id="chemical-si" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Casting_Temp (°C):</label>
+                    <span id="casting-temp" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Cooling_Water_Temp (°C):</label>
+                    <span id="cooling-water-temp" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Casting_Speed (m/min):</label>
+                    <span id="casting-speed" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Entry_Temp_Rolling_Mill (°C):</label>
+                    <span id="entry-temp" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Emulsion_Temp (°C):</label>
+                    <span id="emulsion-temp" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Emulsion_Pressure (MPa):</label>
+                    <span id="emulsion-pressure" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Emulsion_Concentration (%):</label>
+                    <span id="emulsion-concentration" class="value">50</span>
+                </div>
+                <div class="value-item">
+                    <label>Quench_Water_Pressure (MPa):</label>
+                    <span id="quench-water-pressure" class="value">50</span>
+                </div>
+            </div>
+        </div>
+        
+        <button class="button">Halt and Go back</button>
+    </div>
+    
+    <script>
+        function setValue(id, value) {
+    document.getElementById(id).textContent = value;
+}
+
+// Function to set all values 
+function setAllValues() {
+    setValue('uts-desired', 55);
+    setValue('elongation-desired', 60);
+    setValue('conductivity-desired', 65);
+    setValue('uts-current', 52);
+    setValue('elongation-current', 58);
+    setValue('conductivity-current', 63);
+    setValue('chemical-al', 98.5);
+    setValue('chemical-si', 1.5);
+    setValue('casting-temp', 700);
+    setValue('cooling-water-temp', 25);
+    setValue('casting-speed', 1.2);
+    setValue('entry-temp', 500);
+    setValue('emulsion-temp', 40);
+    setValue('emulsion-pressure', 2.5);
+    setValue('emulsion-concentration', 5);
+    setValue('quench-water-pressure', 0.8);
+}
+
+// Call setAllValues when the page loads
+window.onload = setAllValues;
+    </script>
+</body>
+</html>
