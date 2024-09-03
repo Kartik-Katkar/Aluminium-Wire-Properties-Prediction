@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WireCraft Form</title>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation bar styling */
+        .navbar {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #000;
+        }
+
+        /* Form container styling */
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .form-section {
+            width: 48%;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .button {
+            background-color: #f37221;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+        }
+
+
+        .button2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="title">WireCraft</div>
+        <div>
+            <a href="#" class="active">Home</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <div class="form-section">
+            <h2>Enter Initial Casting Values</h2>
+
+            <div class="form-group">
+                <label for="castingTemp">Casting Temp (°C)</label>
+                <input type="number" id="castingTemp" name="castingTemp">
+            </div>
+
+            <div class="form-group">
+                <label for="coolingTemp">Cooling Temp (°C)</label>
+                <input type="number" id="coolingTemp" name="coolingTemp">
+            </div>
+
+            <div class="form-group">
+                <label for="chemicalAl">Chemical Composition Al (%)</label>
+                <input type="number" id="chemicalAl" name="chemicalAl">
+            </div>
+
+            <div class="form-group">
+                <label for="chemicalSi">Chemical Composition Si (%)</label>
+                <input type="number" id="chemicalSi" name="chemicalSi">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Enter Initial Rolling Values</h2>
+
+            <div class="form-group">
+                <label for="castingTempRolling">Casting Temp (°C)</label>
+                <input type="number" id="castingTempRolling" name="castingTempRolling">
+            </div>
+
+            <div class="form-group">
+                <label for="coolingWaterTemp">Cooling Water Temp (°C)</label>
+                <input type="number" id="coolingWaterTemp" name="coolingWaterTemp">
+            </div>
+
+            <div class="form-group">
+                <label for="castingSpeed">Casting Speed (m/min)</label>
+                <input type="number" id="castingSpeed" name="castingSpeed">
+            </div>
+
+            <div class="form-group">
+                <label for="entryTempRolling">Entry Temp Rolling Mill (°C)</label>
+                <input type="number" id="entryTempRolling" name="entryTempRolling">
+            </div>
+
+            <div class="form-group">
+                <label for="emulsionTemp">Emulsion Temp (°C)</label>
+                <input type="number" id="emulsionTemp" name="emulsionTemp">
+            </div>
+
+            <div class="form-group">
+                <label for="emulsionPressure">Emulsion Pressure (MPa)</label>
+                <input type="number" id="emulsionPressure" name="emulsionPressure">
+            </div>
+
+            <div class="form-group">
+                <label for="concentration">Concentration (%)</label>
+                <input type="number" id="concentration" name="concentration">
+            </div>
+
+            <div class="form-group">
+                <label for="quenchPressure">Quench Water Pressure (MPa)</label>
+                <input type="number" id="quenchPressure" name="quenchPressure">
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="text-align: center; margin-top: 20px;">
+        <button class="button button2">SUBMIT</button>
+    </div>
+
+</body>
+
+</html>
