@@ -70,7 +70,7 @@ html {
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centers the image */
   padding: 20px; /* Optional: adds padding inside the .content div */
-  color: white; /* Optional: ensures text is visible over the background */
+  color: white;
 }
 
 .input-image{
