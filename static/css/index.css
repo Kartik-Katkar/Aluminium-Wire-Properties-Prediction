@@ -65,9 +65,24 @@ html {
   height: 100vh;
 }
 
+.input-image{
+  width: 50rem;
+}
+
 .text-section {
   flex: 1;
   padding-right: 2rem;
+}
+.text-section-faq {
+  margin: auto;
+  text-align: center;
+}
+.text-section-faq >ul {
+  margin: auto;
+  text-align: left;
+}
+.text-section-faq > * {
+  margin-top: 2rem;
 }
 
 .text-section h1 {
@@ -136,3 +151,4 @@ html {
 .button:hover {
   background-color: #333333;
 }
+

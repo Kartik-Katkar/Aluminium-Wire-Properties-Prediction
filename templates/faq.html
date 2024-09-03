@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/faq.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <title>WireCraft</title>
     <link
@@ -18,19 +19,38 @@
     <div class="navbar">
         <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
         <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Logo" class="navbar-logo"></a>
-        <!-- <div class="logo">WireCraft</div> -->
         
     </div>
     <hr>
 
     <div class="content">
-        <div class="text-section">
-            <h1>Aluminum Prediction</h1>
-            <p>We provide the best solutions for your business. Discover our services and make your business grow with us.</p>
-            <button class="button">Learn More</button>
+        <div class="text-section-faq">
+            <br>
+            <br>
+            <h1>Instructions for the project</h1>
+            <br>
+            <h2>How to Input Values?</h2>
+            <p>Ensure all casting parameters such as chemical composition, casting temperature, and cooling water temperature are accurately recorded.<br> These are required for the prediction of the current state of your material produced.</p>
+            <img src="../static/images/flow.png" alt="Input Example" class="input-image">
+            <h2>Parameter Details</h2>
+            <ul>
+                <li><strong>Chemical Composition:</strong> Enter the exact percentage of each alloying element.</li>
+                <li><strong>Casting Temperature:</strong> Input the temperature at which the aluminum is cast.</li>
+                <li><strong>Cooling Water Temperature:</strong> Specify the temperature of the cooling water used during the casting process.</li>
+                <li><strong>Emulsion Temperature & Pressure:</strong> Record both temperature and pressure of the emulsion used in the rolling mill.</li>
+            </ul>
+
+            <!-- <h2>Flow of process</h2>
+            <p>The below flowchart shows the flow of the production process.</p>
+            <img src="prediction-example.png" alt="Prediction Example" class="prediction-image"> -->
+
+            <h3>What are the critical parameters?</h3>
+            <p>The most critical parameters include chemical composition, casting temperature, and emulsion conditions.</p>
+            <h3>Can I adjust parameters after input?</h3>
+            <p>Yes, you can adjust parameters, but it's recommended to maintain consistency for better prediction accuracy.</p>
         </div>
-        
     </div>
+    
 
    
 </body>
