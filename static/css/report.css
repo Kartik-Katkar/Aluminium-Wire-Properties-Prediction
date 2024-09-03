@@ -1,4 +1,7 @@
 /* Content Styles */
+*{
+  font-family: 'Montserrat', Arial, sans-serif;
+}
 .content {
   display: flex;
   flex-direction: column;
