@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login.css" />
-    <title>Login Page</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/desired_input.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>WireCraft</title>
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="navbar">
+        <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
+        <a href="{{ url_for('home') }}"><img src="../static/images/back.png" alt="back" class="navbar-logo-2"></a>
+        <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Home" class="navbar-logo-1"></a>
+        <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="FAQ" class="navbar-logo"></a>
+    </div>
+    <hr>
+    
     <header>
-      <h1>Login Page</h1>
+      <h1>Login</h1>
     </header>
 
     <div class="container">
@@ -24,9 +36,7 @@
         </form>
       </div>
 
-      <div class="image-container">
-        <img src="any_image.jpg" alt="Placeholder Image" />
-      </div>
-    </div>
-  </body>
+  </div>
+        
+</body>
 </html>

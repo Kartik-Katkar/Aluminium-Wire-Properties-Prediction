@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/manual.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>WireCraft</title>
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="navbar">
+        <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
+        <a href="{{ url_for('home') }}"><img src="../static/images/back.png" alt="back" class="navbar-logo-2"></a>
+        <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Home" class="navbar-logo-1"></a>
+        <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="FAQ" class="navbar-logo"></a>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Select the Usecase parameters</h1>
+    <br>
+    <br>
+    <div class="parameters">
+        <div class="parameter-box" onclick="selectRadio('param1')">
+            <img src="../static/images/cable2.png" alt="EC Wire Rod (WE 10/12)">
+            <h2>EC Wire Rod (WE 10/12)</h2>
+            <p>Elongitivity: 35%</p>
+            <p>UTS: 220 MPa</p>
+            <p>Conductivity:61.500 IACS</p>
+       
+            <input type="radio" name="parameter" value="param1" id="param1">
+        </div>
+        <div class="parameter-box" onclick="selectRadio('param2')">
+            <img src="../static/images/cable.png" alt="EC Wire Rod (WE 20/22)">
+            <h2>EC Wire Rod (WE 20/22)</h2>
+            <p>Elongitivity: 35%</p>
+            <p>UTS: 210 Mpa</p>
+            <p>Conductivity:61.00 IACS</p>
+            
+            <input type="radio" name="parameter" value="param2" id="param2">
+        </div>
+        <div class="parameter-box" onclick="selectRadio('param3')">
+            <img src="../static/images/cable1.png" alt="CG Wire Rod (WC 10/12)">
+            <h2>CG Wire Rod (WC 10/12)</h2>
+            <p>Elongitivity: 25%</p>
+            <p>UTS: 270 MPa</p>
+            <p>Conductivity:45.00 IACS</p>
+
+            <input type="radio" name="parameter" value="param3" id="param3">
+        </div>
+        <div class="parameter-box custom" onclick="selectRadio('param4')">
+            <img src="../static/images/custom.png" alt="custom parameter">
+            <h2>Custom Parameter Requirement</h2>
+            
+            <input type="radio" name="parameter" value="param4" id="param4">
+        </div>
+
+    </div>
+    <br><br>
+    <button class="button button2">Submit</button>
+<br>
+<br>
+<br>
+<script>
+    function selectRadio(value) {
+        document.getElementById(value).checked = true;
+    }
+</script>
+</body>
+</html>
