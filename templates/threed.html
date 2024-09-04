@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/threed.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>WireCraft</title>
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.136.0/examples/js/controls/OrbitControls.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px; 
+            gap: 40px;
+        }
+
+        #3d-normal, #3d-mesh, #3d-cross-section {
+            width: 600px;
+            height: 400px;
+            margin: 10px;
+       
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
+        <a href="{{ url_for('home') }}"><img src="../static/images/back.png" alt="back" class="navbar-logo-2"></a>
+        <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Home" class="navbar-logo-1"></a>
+        <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="FAQ" class="navbar-logo"></a>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1 style="text-align: center;">3D Visualization</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="container">
+        <div id="3d-normal"></div>
+        
+        <div id="3d-mesh"></div>
+       
+    </div>
+    <div id="container">
+        <!-- <div id="3d-normal"></div> -->
+        <!-- <div id="3d-mesh"></div> -->
+        <div id="3d-cross-section"></div>
+    </div>
+
+
+    <script>
+        // Scene, Camera, Renderer setup for Normal Model
+        const sceneNormal = new THREE.Scene();
+        const cameraNormal = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
+        const rendererNormal = new THREE.WebGLRenderer();
+        rendererNormal.setSize(600, 400);
+        document.getElementById('3d-normal').appendChild(rendererNormal.domElement);
+
+        // Scene, Camera, Renderer setup for Mesh Model
+        const sceneMesh = new THREE.Scene();
+        const cameraMesh = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
+        const rendererMesh = new THREE.WebGLRenderer();
+        rendererMesh.setSize(600, 400);
+        document.getElementById('3d-mesh').appendChild(rendererMesh.domElement);
+
+        // Scene, Camera, Renderer setup for Cross-Section Model
+        const sceneCrossSection = new THREE.Scene();
+        const cameraCrossSection = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
+        const rendererCrossSection = new THREE.WebGLRenderer();
+        rendererCrossSection.setSize(600, 400);
+        document.getElementById('3d-cross-section').appendChild(rendererCrossSection.domElement);
+
+        // Create a normal cylinder model
+        const geometryNormal = new THREE.CylinderGeometry(1, 1, 10, 32);
+        const materialNormal = new THREE.MeshPhongMaterial({ color: 0xa9a9a9 });
+        const cylinderNormal = new THREE.Mesh(geometryNormal, materialNormal);
+        sceneNormal.add(cylinderNormal);
+
+        // Create a mesh cylinder model
+        const geometryMesh = new THREE.CylinderGeometry(2, 2, 20, 10);
+        const materialMesh = new THREE.MeshBasicMaterial({ color: 0xa9a9a9, wireframe: true });
+        const cylinderMesh = new THREE.Mesh(geometryMesh, materialMesh);
+        sceneMesh.add(cylinderMesh);
+
+        // Create a cross-section model with horizontal and vertical cross-sections
+        const geometryCrossSection = new THREE.CylinderGeometry(1, 1, 10, 32);
+        const materialCrossSection = new THREE.MeshPhongMaterial({ color: 0xffd700, wireframe: false });
+        const cylinderCrossSection = new THREE.Mesh(geometryCrossSection, materialCrossSection);
+
+        // Creating the cross-sections
+        const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, side: THREE.DoubleSide });
+        const horizontalPlane = new THREE.PlaneGeometry(10, 10);
+        const horizontalCrossSection = new THREE.Mesh(horizontalPlane, planeMaterial);
+        horizontalCrossSection.rotation.x = Math.PI / 2;
+        sceneCrossSection.add(horizontalCrossSection);
+
+        const verticalPlane = new THREE.PlaneGeometry(10, 10);
+        const verticalCrossSection = new THREE.Mesh(verticalPlane, planeMaterial);
+        verticalCrossSection.rotation.y = Math.PI / 2;
+        sceneCrossSection.add(verticalCrossSection);
+
+        sceneCrossSection.add(cylinderCrossSection);
+
+        // Add light to each scene
+        const ambientLightNormal = new THREE.AmbientLight(0x404040, 2); // soft white light
+        sceneNormal.add(ambientLightNormal);
+
+        const ambientLightMesh = new THREE.AmbientLight(0x404040, 2); // soft white light
+        sceneMesh.add(ambientLightMesh);
+
+        const ambientLightCrossSection = new THREE.AmbientLight(0x404040, 2); // soft white light
+        sceneCrossSection.add(ambientLightCrossSection);
+
+        const directionalLightNormal = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLightNormal.position.set(5, 10, 7.5);
+        sceneNormal.add(directionalLightNormal);
+
+        const directionalLightMesh = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLightMesh.position.set(5, 10, 7.5);
+        sceneMesh.add(directionalLightMesh);
+
+        const directionalLightCrossSection = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLightCrossSection.position.set(5, 10, 7.5);
+        sceneCrossSection.add(directionalLightCrossSection);
+
+        // Camera position for each scene
+        cameraNormal.position.z = 20;
+        cameraMesh.position.z = 20;
+        cameraCrossSection.position.z = 20;
+
+        // Rotate and Zoom controls for each model
+        const controlsNormal = new THREE.OrbitControls(cameraNormal, rendererNormal.domElement);
+        const controlsMesh = new THREE.OrbitControls(cameraMesh, rendererMesh.domElement);
+        const controlsCrossSection = new THREE.OrbitControls(cameraCrossSection, rendererCrossSection.domElement);
+
+        // Render loop for normal model
+        function animateNormal() {
+            requestAnimationFrame(animateNormal);
+            cylinderNormal.rotation.x += 0.01;
+            cylinderNormal.rotation.y += 0.01;
+            controlsNormal.update();
+            rendererNormal.render(sceneNormal, cameraNormal);
+        }
+
+        // Render loop for mesh model
+        function animateMesh() {
+            requestAnimationFrame(animateMesh);
+            cylinderMesh.rotation.x += 0.01;
+            cylinderMesh.rotation.y += 0.01;
+            controlsMesh.update();
+            rendererMesh.render(sceneMesh, cameraMesh);
+        }
+
+        // Render loop for cross-section model
+        function animateCrossSection() {
+            requestAnimationFrame(animateCrossSection);
+            cylinderCrossSection.rotation.x += 0.01;
+            cylinderCrossSection.rotation.y += 0.01;
+            controlsCrossSection.update();
+            rendererCrossSection.render(sceneCrossSection, cameraCrossSection);
+        }
+
+        animateNormal();
+        animateMesh();
+        animateCrossSection();
+    </script>
+</body>
+
+</html>
