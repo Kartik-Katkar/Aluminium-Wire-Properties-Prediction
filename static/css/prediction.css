@@ -12,31 +12,31 @@
     left: 0;
     z-index: 10;
     border-bottom: 2px solid #000000; 
-  }
-  
+}
   
 .navbar-logo {
-    height: 50px; /* Adjust size as needed */
+    height: 50px;
     margin-left: 5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-right: 10rem; /* Space between logo and text */
-  }
-  .navbar-logo-1 {
-    height: 50px; /* Adjust size as needed */
+    margin-right: 10rem;
+}
+
+.navbar-logo-1 {
+    height: 50px;
     margin-left: 8rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-right: 2rem; /* Space between logo and text */
-  }
-  .navbar-logo-2 {
-    height: 50px; /* Adjust size as needed */
+    margin-right: 2rem;
+}
+
+.navbar-logo-2 {
+    height: 50px;
     margin-left: 40rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    /* margin-right: 2rem;  */
-  }
-  
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -53,44 +53,6 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 .content {
@@ -118,7 +80,7 @@ nav ul li a {
     font-weight: normal;
 }
 
-.button-grid {
+.card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -126,19 +88,33 @@ nav ul li a {
     margin-top: 30px;
 }
 
-button {
-    background-color: #f07f41;
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    font-size: 16px;
+.card {
+    background-color: #ffffff;
     border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(255, 153, 75, 0.693);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
     max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-button:hover {
-    background-color: #d96e32;
+.card img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }

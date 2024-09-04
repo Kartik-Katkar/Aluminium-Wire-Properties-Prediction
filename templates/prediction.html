@@ -5,23 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WireCraft</title>
     <link rel="stylesheet" href="../static/css/prediction.css">
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
 </head>
 <body>
     <div class="container">
-        <!-- <nav>
-            <div class="logo">
-                <img src="logo.jpeg" alt="WireCraft Logo" />
-            </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </nav> -->
         <div class="navbar">
             <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
-            <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="Logo" class="navbar-logo"></a>
-            <!-- <div class="logo">WireCraft</div> -->
-            
+            <a href="{{ url_for('home') }}"><img src="../static/images/back.png" alt="back" class="navbar-logo-2"></a>
+            <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Home" class="navbar-logo-1"></a>
+            <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="FAQ" class="navbar-logo"></a>
         </div>
         <hr>
         <br>
@@ -36,24 +28,36 @@
 
             <div class="data-row">
                 <div class="data-item">
-                    <h2>UTS :</h2>
+                    <h2>UTS : 43</h2>
                 </div>
                 <div class="data-item">
-                    <h2>Elongation :</h2>
+                    <h2>Elongation : 23</h2>
                 </div>
             </div>
 
             <div class="data-row">
                 <div class="data-item">
-                    <h2>Conductivity :</h2>
+                    <h2>Conductivity : 64</h2>
                 </div>
             </div>
 
-            <div class="button-grid">
-                <button>Real-time comparison and Control (automated)</button>
-                <button>Real-time Visualization and suggestions (Manual)</button>
-                <button>Download Industry Compliance report</button>
-                <button>3D visualization</button>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="../static/images/automatic.png" alt="Real-time" class="card-image">
+                    <h3>Real-time comparison and Control (automated)</h3>
+                </div>
+                <div class="card">
+                    <img src="../static/images/manual.png" alt="Visualization" class="card-image">
+                    <h3>Real-time Visualization and suggestions (Manual)</h3>
+                </div>
+                <div class="card">
+                    <img src="../static/images/report.png" alt="Report" class="card-image">
+                    <h3>Download Industry Compliance report</h3>
+                </div>
+                <div class="card">
+                    <img src="../static/images/3d.png" alt="3D Visualization" class="card-image">
+                    <h3>3D visualization</h3>
+                </div>
             </div>
         </div>
     </div>
