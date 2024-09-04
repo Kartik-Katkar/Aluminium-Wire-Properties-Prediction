@@ -1,3 +1,6 @@
+*{
+    text-decoration: none;
+}
 .navbar {
     width: 100%;
     padding: 1rem;
@@ -12,6 +15,7 @@
     left: 0;
     z-index: 10;
     border-bottom: 2px solid #000000; 
+  
 }
   
 .navbar-logo {
