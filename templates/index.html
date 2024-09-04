@@ -18,7 +18,7 @@
     <div class="navbar">
         <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
         <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="Logo" class="navbar-logo"></a>
-        <!-- <div class="logo">WireCraft</div> -->
+        
         
     </div>
     <hr>
@@ -29,7 +29,7 @@
             <p>An application for predicting aluminium wire rod properties, 
                 boosting <br> productivity 
                  and quality control with interactive, dynamic 3D Visualizations <br> and Data Analysis.</p>
-            <button class="button">Predict properties</button>
+                 <a href="{{ url_for('usecase') }}"><button class="button">Predict properties</button></a>
         </div>
         <!-- <div class="canvas-container">
             <div id="container"></div>

@@ -16,74 +16,72 @@
         <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Home" class="navbar-logo-1"></a>
         <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="FAQ" class="navbar-logo"></a>
     </div>
+
     <hr>
     
-    <div class="content">
+    <div class="content1">
         <div class="print">
-        <h2 class="title">Industry Compliance report</h2>
-    
-        <div class="report-container">
-            <div class="report-text">
-                <div class="report-info">
-                    <p>Odd values detected: 8</p>
-                    <p>Borderline values: 4</p>
-                    <p>Handled values: 4</p>
-                    <p>Status: <span class="status"></span></p>
+            <h2 class="title">Industry Compliance report</h2>
+            <div class="report-container">
+                <div class="report-text">
+                    <div class="report-info">
+                        <p>Odd values detected: 8</p>
+                        <p>Borderline values: 4</p>
+                        <p>Handled values: 4</p>
+                        <p>Status: <span class="status"></span></p>
+                    </div>
+                    <div class="comment-section">
+                        <p>Comment: Based on the values, the industry is following the compliant values set by the Ministry of Labor and Employment.</p>
+                        <p>Maintenance Quality check needed for sensors 53723XN and 38273F4</p>
+                    </div>
                 </div>
-    
-                <div class="comment-section">
-                    <p>Comment: Based on the values, the industry is following the compliant values set by the Ministry of Labor and Employment.</p>
-                    <p>Maintenance Quality check needed for sensors 53723XN and 38273F4</p>
+                <div class="report-image">
+                    <img src="../static/images/nalco.jpeg" alt="Report Image">
                 </div>
             </div>
-    
-            <div class="report-image">
-                <img src="../static/images/nalco.jpeg" alt="Report Image">
-            </div>
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Sensor Id</th>
+                        <th>Value</th>
+                        <th>Industry value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>53723XN</td>
+                        <td>35.6</td>
+                        <td>32.0</td>
+                    </tr>
+                    <tr>
+                        <td>38273F4</td>
+                        <td>67.9</td>
+                        <td>67.3</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    
-        <table class="report-table">
-            <thead>
-                <tr>
-                    <th>Sensor Id</th>
-                    <th>Value</th>
-                    <th>Industry value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>53723XN</td>
-                    <td>35.6</td>
-                    <td>32.0</td>
-                </tr>
-                <tr>
-                    <td>38273F4</td>
-                    <td>67.9</td>
-                    <td>67.3</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
         <a href="#" class="download-button" onclick="downloadPDF()">Download report</a>
     </div>
-  
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
-      function downloadPDF() {
-        const element = document.querySelector('.print');
-        const opt = {
-          margin: 1,
-          filename: 'compliance_report.pdf',
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2 },
-          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
-        html2pdf().from(element).set(opt).save();
-      }
+        function downloadPDF() {
+            console.log("Download button clicked"); // Debugging line
+            const element = document.querySelector('.print');
+            if (!element) {
+                console.error("Element not found");
+                return;
+            }
+            const opt = {
+                margin: 1,
+                filename: 'compliance_report.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(element).set(opt).save();
+        }
     </script>
-    
-        
 </body>
 </html>

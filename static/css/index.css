@@ -65,12 +65,24 @@ html {
   height: 100vh;
   margin-left: 5rem;
 
-  background-image: url('../images/Landing.png'); /* Replace with your image path */
+  background-image: url('../images/Landing.png'); 
+  /* Replace with your image path */
   background-size: cover; /* Makes sure the image covers the whole div */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centers the image */
   padding: 20px; /* Optional: adds padding inside the .content div */
   color: white;
+}
+.content1 {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 5rem; /* Adjusted to make space for the navbar */
+  height: 100vh;
+  margin-left: 5rem;
+  color: black;
 }
 
 .input-image{

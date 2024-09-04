@@ -3,49 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual Checking</title>
-    <link rel="stylesheet" href="../static/css/manual.css">
+    <title>WireCraft</title>
+    <link rel="stylesheet" href="../static/css/style2.css">
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
 </head>
 <body>
     <div class="container">
-         <div class="navbar">
+        <div class="navbar">
             <img src="../static/images/Logo with name.png" alt="Logo" class="navbar-logo">
-            <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="Logo" class="navbar-logo"></a>
-         </div>
+            <a href="{{ url_for('home') }}"><img src="../static/images/back.png" alt="back" class="navbar-logo-2"></a>
+            <a href="{{ url_for('home') }}"><img src="../static/images/home.png" alt="Home" class="navbar-logo-1"></a>
+            <a href="{{ url_for('faq') }}"><img src="../static/images/FAQ.png" alt="FAQ" class="navbar-logo"></a>
+        </div>
 
         <div class="content">
             <br>
             <br>
             <br>
             <br>
-            <h1>Manual checking</h1>
+            <br>
+            <br>
+            <h1>Manual Checking</h1>
 
             <div class="illustration">
-                <img src="../static/images/chart.jpg" alt="Graphical Illustration">
+                <img src="../static/images/chart.png" alt="Graphical Illustration">
             </div>
 
             <div class="values-row">
                 <div class="value-item">
                     <h2>UTS Desired Value :</h2>
+                    <span class="value-display">56</span>
                 </div>
                 <div class="value-item">
                     <h2>UTS Current Value:</h2>
+                    <span class="value-display">34</span>
                 </div>
             </div>
-            <br>
 
             <div class="values-row">
                 <div class="value-item">
                     <h2>Temp Current Value :</h2>
                     <div class="temp-control">
                         <button class="temp-btn" id="increaseTemp">🔼</button>
-                        <span id="tempValue">0</span>
+                        <span id="tempValue">34</span>
                         <button class="temp-btn" id="decreaseTemp">🔽</button>
                     </div>
                 </div>
             </div>
 
-            <button>Halt and Go back</button>
+            <button class="button2">Halt and Go Back</button>
         </div>
     </div>
 
