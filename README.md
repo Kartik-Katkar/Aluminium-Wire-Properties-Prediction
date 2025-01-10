@@ -1,6 +1,6 @@
 SIH Aluminium Rod code
 3D simulation of ROD with three.JS
- ![Image](./Images/threejs.png)
+ ![Image](./Images/three.png)
  ![Image](./Images/1.png)
  ![Image](./Images/2.png)
  ![Image](./Images/3.png)
